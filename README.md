@@ -113,7 +113,7 @@ This command will begin download the Bitnami Docker images and start the service
 > View the container logs using:
 >
 > ```bash
-> docker-compose -f logs
+> docker-compose logs
 > ```
 
 Get the IP address of the Docker Machine VM using:
@@ -143,7 +143,7 @@ Lets go ahead and modify the look and feel of the app adding the popular [Twitte
 1 - Install Bootstrap npm module and restart your application.
 
 ```bash
-$ docker-compose exec myapp npm install bootstrap --save
+$ docker exec -it myapp_myapp_1 npm install bootstrap --save
 $ docker-compose restart
 ```
 
@@ -179,14 +179,14 @@ block content
 
 And thats it, point your browser to http://{DOCKER_MACHINE_IP}:3000 and you will see that the look and feel has changed.
 
-From the last couple commands, you must have already figured out that commands can be executed inside the `myapp` service container by prefixing the command with `docker-compose exec myapp`.
+From the last couple commands, you must have already figured out that commands can be executed inside the `myapp` service container by prefixing the command with `docker exec -it myapp_myapp_1`.
 
 Similarly,
 
 **To install an npm module in your project**
 
 ```bash
-$ docker-compose exec myapp npm install [my-module] --save
+$ docker exec -it myapp_myapp_1 npm install [my-module] --save
 ```
 
 **To see my application logs**
