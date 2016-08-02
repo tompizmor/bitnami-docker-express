@@ -1,0 +1,53 @@
+{
+  "v": "4.0",
+  "workspace": {
+    "name": "bitnami-docker-express",
+    "defaultEnv": "bitnami-docker-express",
+    "environments": [
+      {
+        "name": "bitnami-docker-express",
+        "recipe": null,
+        "machineConfigs": [
+          {
+            "name": "ws-machine",
+            "limits": {
+              "ram": 1000
+            },
+            "source": {
+              "type": "dockerfile",
+              "location": "https://raw.githubusercontent.com/arecio/bitnami-docker-express/master/.codenvy.dockerfile"
+            },
+            "type": "docker",
+            "dev": true
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "my-project",
+        "type": "node-js",
+        "path": "/my-project",
+        "source": {
+          "type": "git",
+          "location": "https://github.com/arecio/bitnami-docker-express"
+        },
+        "mixins": [
+          "git"
+        ],
+        "modules": [],
+        "problems": []
+      }
+    ],
+    "commands": [
+      {
+        "name": "run",
+        "type": "custom",
+        "commandLine": "express . -f",
+        "attributes": {
+          "previewUrl": "http://${server.port.8000}/"
+        }
+      }
+    ]
+  }
+}
