@@ -1,11 +1,11 @@
 {
   "v": "4.0",
   "workspace": {
-    "name": "bitnami-docker-express",
-    "defaultEnv": "bitnami-docker-express",
+    "name": "express",
+    "defaultEnv": "express",
     "environments": [
       {
-        "name": "bitnami-docker-express",
+        "name": "express",
         "recipe": null,
         "machineConfigs": [
           {
