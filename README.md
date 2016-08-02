@@ -1,3 +1,8 @@
+# Eclipse Che Developer Workspace
+Click to get an Eclipse Che on-demand workspace with a sample project ready to start developing.
+
+[![Contribute](http://beta.codenvy.com/factory/resources/codenvy-contribute.svg)](https://beta.codenvy.com/f/?url=https%3A%2F%2Fgithub.com%2Famrecio%2Fbitnami-docker-express)
+
 # Express Application Development using Bitnami Docker Images
 
 We increasingly see developers adopting two strategies for development. Using a so called “micro services” architecture and using containers for development. At Bitnami, we have developed tools and assets that dramatically lowers the overhead for developing with this approach.
