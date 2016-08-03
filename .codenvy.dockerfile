@@ -32,5 +32,5 @@ EXPOSE 3000
 
 LABEL che:server:3000:ref=nodejs che:server:3000:protocol=http
 
-RUN harpoon initialize $BITNAMI_APP_NAME
+RUN harpoon initialize tomcat
 CMD ["harpoon", "start", "--foreground", "tomcat"]
