@@ -2,14 +2,14 @@
 set -e
 
 INIT_SEM=/tmp/initialized.sem
-PACKAGE_FILE=/app/package.json
+PACKAGE_FILE=/project/package.json
 
 fresh_container() {
   [ ! -f $INIT_SEM ]
 }
 
 app_present() {
-  [ -f /app/app.js ]
+  [ -f /project/project.js ]
 }
 
 dependencies_up_to_date() {
@@ -43,7 +43,7 @@ wait_for_db() {
 setup_db() {
   npm install mongodb@2.1.18 --save
   log "Adding MongoDB example files under /config/mongodb.js"
-  cp -rn /app_template/config .
+  cp -rn /project_template/config .
 }
 
 log () {

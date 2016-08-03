@@ -43,11 +43,11 @@ USER bitnami
 # This will add an specific version of Express that will validate the package.json requirement
 # so we will not download any other version
 # It also generates the cache in ~/.npm
-RUN mkdir ~/test_app && cd ~/test_app &&\
+RUN mkdir ~/test_project && cd ~/test_project &&\
  npm install express@4.13.4 &&\
- express -f . && npm install && sudo rm -rf /tmp/npm* ~/test_app
+ express -f . && npm install && sudo rm -rf /tmp/npm* ~/test_project
 
-WORKDIR /app
+WORKDIR /project
 EXPOSE 3000
 
 ENTRYPOINT ["/app-entrypoint.sh"]

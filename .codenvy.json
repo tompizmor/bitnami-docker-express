@@ -32,7 +32,6 @@
           "type": "git",
           "location": "https://github.com/amrecio/bitnami-docker-express",
           "parameters": {
-            "branch": "sample-express",
             "keepVcs": "false"
           }
         },
