@@ -70,12 +70,6 @@
             "name": "create sample project"
           },
           "id": "runCommand"
-        },
-        {
-          "properties": {
-            "file": "/express-sample/app.js"
-          },
-          "id": "openFile"
         }
       ]
     }
