@@ -47,9 +47,9 @@
       {
         "name": "create sample project",
         "type": "custom",
-        "commandLine": "cd ${current.project.path} && express . -f",
+        "commandLine": "cd ${current.project.path} && npm install express@4.13.4 && express -f . && npm install",
         "attributes": {
-          "previewUrl": ""
+          "previewUrl": "http://${server.port.3000}/"
         }
       }
     ]
