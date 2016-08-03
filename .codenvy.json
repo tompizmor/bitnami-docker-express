@@ -30,7 +30,11 @@
         "path": "/express-sample",
         "source": {
           "type": "git",
-          "location": "https://github.com/amrecio/bitnami-docker-express"
+          "location": "https://github.com/amrecio/bitnami-docker-express",
+          "parameters": {
+            "branch": "sample-express",
+            "keepVcs": "false"
+          }
         },
         "mixins": [
           "git"
