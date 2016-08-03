@@ -25,9 +25,9 @@
     ],
     "projects": [
       {
-        "name": "my-project",
+        "name": "express-sample",
         "type": "node-js",
-        "path": "/my-project",
+        "path": "/express-sample",
         "source": {
           "type": "git",
           "location": "https://github.com/amrecio/bitnami-docker-express"
@@ -41,13 +41,38 @@
     ],
     "commands": [
       {
-        "name": "run",
+        "name": "create sample project",
         "type": "custom",
-        "commandLine": "express . -f",
+        "commandLine": "cd ${current.project.path} && express . -f",
         "attributes": {
-          "previewUrl": "http://${server.port.8000}/"
+          "previewUrl": ""
         }
       }
     ]
+  },
+  "ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "properties": {
+            "file": "/express-sample/README.md"
+
+          },
+          "id": "openFile"
+
+        },
+        {
+          "properties": {
+            "name": "create sample project"
+
+          },
+          "id": "runCommand"
+
+        }
+
+      ]
+
+    }
+
   }
 }
