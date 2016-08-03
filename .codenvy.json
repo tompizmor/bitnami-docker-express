@@ -51,6 +51,14 @@
         "attributes": {
           "previewUrl": "http://${server.port.3000}/"
         }
+      },
+      {
+        "name": "start",
+        "type": "custom",
+        "commandLine": "cd ${current.project.path} && npm start",
+        "attributes": {
+          "previewUrl": "http://${server.port.3000}/"
+        }
       }
     ]
   },
