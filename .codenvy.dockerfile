@@ -59,6 +59,7 @@ RUN harpoon initialize $BITNAMI_APP_NAME \
     ${MONGODB_PRIMARY_PASSWORD:+--primaryPassword $MONGODB_PRIMARY_PASSWORD}
 
 # Eclipse Che
+ENV BITNAMI_APP_NAME=express
+
 # CMD ["harpoon", "start", "--foreground", "tomcat"]
-USER bitnami
 CMD harpoon start mongodb && harpoon start --foreground tomcat
