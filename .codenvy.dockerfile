@@ -5,6 +5,8 @@ MAINTAINER Bitnami <containers@bitnami.com>
 #
 # Eclipse Che
 #
+USER root
+
 RUN echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 ENV BITNAMI_IMAGE_VERSION=8.0.35-r1 \
@@ -58,4 +60,5 @@ RUN harpoon initialize $BITNAMI_APP_NAME \
 
 # Eclipse Che
 # CMD ["harpoon", "start", "--foreground", "tomcat"]
+USER bitnami
 CMD harpoon start mongodb && harpoon start --foreground tomcat
