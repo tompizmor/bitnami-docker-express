@@ -17,12 +17,13 @@ RUN bitnami-pkg install java-1.8.0_91-0 --checksum 64cf20b77dc7cce3a28e9fe1daa14
 ENV PATH=/opt/bitnami/java/bin:$PATH
 
 RUN bitnami-pkg unpack tomcat-8.0.35-0 --checksum d86af6bade1325215d4dd1b63aefbd4a57abb05a71672e5f58e27ff2fd49325b
-RUN ln -sf /opt/bitnami/$BITNAMI_APP_NAME/data /app
 
 ENV PATH=/opt/bitnami/$BITNAMI_APP_NAME/bin:$PATH
 ENV TOMCAT_HOME=/opt/bitnami/$BITNAMI_APP_NAME
 
 RUN harpoon initialize tomcat
+
+RUN apt-get update && apt-get install -y unzip
 
 #
 # Express
