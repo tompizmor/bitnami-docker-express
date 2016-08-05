@@ -35,8 +35,7 @@ LABEL che:server:3000:ref=nodejs che:server:3000:protocol=http
 #
 
 # From docker-compose.yml
-ENV DATABASE_URL=mongodb://mongodb:27017/my_project_development
-RUN echo "127.0.0.1    mongodb" >> /etc/hosts
+ENV DATABASE_URL=mongodb://localhost:27017/my_project_development
 
 # From bitnami-docker-mongodb/Dockerfile
 ENV BITNAMI_IMAGE_VERSION=3.2.7-r2 \
