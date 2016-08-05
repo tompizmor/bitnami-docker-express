@@ -51,5 +51,6 @@ ENV PATH=/opt/bitnami/$BITNAMI_APP_NAME/sbin:/opt/bitnami/$BITNAMI_APP_NAME/bin:
 ENV BITNAMI_APP_NAME=express-che
 
 USER bitnami
+WORKDIR /projects
 
 CMD ["sudo", "-i", "harpoon", "start", "--foreground", "tomcat"]
