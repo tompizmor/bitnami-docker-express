@@ -50,3 +50,5 @@ ENV PATH=/opt/bitnami/$BITNAMI_APP_NAME/sbin:/opt/bitnami/$BITNAMI_APP_NAME/bin:
 ENV BITNAMI_APP_NAME=express
 
 CMD ["harpoon", "start", "--foreground", "tomcat"]
+
+USER bitnami
