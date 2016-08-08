@@ -9,11 +9,6 @@ USER root
 
 RUN echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
-RUN apt-get update && \
-  DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y git unzip && \
-    apt-get clean && \
-    rm -rf /var/lib/apt /var/cache/apt/archives/* /tmp/*
-
 ENV BITNAMI_APP_NAME=tomcat \
     BITNAMI_APP_USER=tomcat
 
