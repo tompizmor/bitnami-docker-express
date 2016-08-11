@@ -15,7 +15,7 @@
             },
             "source": {
               "type": "dockerfile",
-              "location": "https://raw.githubusercontent.com/amrecio/bitnami-docker-express/master/.codenvy.dockerfile"
+              "location": "https://raw.githubusercontent.com/amrecio/bitnami-docker-express/che-mongodb/.codenvy.dockerfile"
             },
             "type": "docker",
             "dev": true
