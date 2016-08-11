@@ -51,4 +51,4 @@ ENV BITNAMI_APP_NAME=express-che
 USER bitnami
 WORKDIR /projects
 
-CMD ["tail", "-f", "/dev/null"]
+CMD ["harpoon", "start", "mongodb"]
