@@ -32,7 +32,8 @@
           "type": "git",
           "location": "https://github.com/amrecio/bitnami-docker-express",
           "parameters": {
-            "keepVcs": "false"
+            "branch": "che-mongodb",
+            "keepVcs": "true",
           }
         },
         "mixins": [
@@ -40,7 +41,7 @@
           "pullrequest"
         ],
         "attributes": {
-          "local_branch": [ "contrib" ],
+          "local_branch": [ "che-mongodb" ],
           "contribute_to_branch" : [ "master" ]
         },
         "modules": [],
