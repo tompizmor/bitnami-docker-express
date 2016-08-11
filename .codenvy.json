@@ -56,7 +56,7 @@
         "attributes": {}
       },
       {
-        "name": "start",
+        "name": "run",
         "type": "custom",
         "commandLine": "cd ${current.project.path} && npm start",
         "attributes": {
