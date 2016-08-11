@@ -51,4 +51,6 @@ ENV BITNAMI_APP_NAME=express-che
 USER bitnami
 WORKDIR /projects
 
-CMD ["harpoon", "start", "mongodb"]
+ENV DATABASE_URL=mongodb://localhost:27017/my_project_development
+
+CMD ["sudo", "-i", "harpoon", "start", "--foreground", "mongodb"]
