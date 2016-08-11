@@ -33,8 +33,7 @@
           "location": "https://github.com/amrecio/bitnami-docker-express",
           "parameters": {
             "branch": "che-mongodb",
-            "keepVcs": "true",
-            "keepDir": "sample-project"
+            "keepVcs": "true"
           }
         },
         "mixins": [
@@ -53,13 +52,13 @@
       {
         "name": "create sample project",
         "type": "custom",
-        "commandLine": "cd ${current.project.path}/sample-project && npm install express@4.13.4 && express -f . && npm install mongodb@2.1.18 --save && npm install && counter=0; until nc -z localhost 27017; do counter=$((counter+1)); if [ $counter == 10 ]; then echo \"Error: Couldn't connect to MongoDB.\"; exit 1; fi; echo \"Trying to connect to MongoDB at localhost. Attempt $counter.\"; sleep 5; done; echo \"Connected to MongoDB database\" && echo \"Sample project created. You may close this window.\"",
+        "commandLine": "cd ${current.project.path} && npm install express@4.13.4 && express -f . && npm install mongodb@2.1.18 --save && npm install && counter=0; until nc -z localhost 27017; do counter=$((counter+1)); if [ $counter == 10 ]; then echo \"Error: Couldn't connect to MongoDB.\"; exit 1; fi; echo \"Trying to connect to MongoDB at localhost. Attempt $counter.\"; sleep 5; done; echo \"Connected to MongoDB database\" && echo \"Sample project created. You may close this window.\"",
         "attributes": {}
       },
       {
         "name": "start",
         "type": "custom",
-        "commandLine": "cd ${current.project.path}/sample-project && npm start",
+        "commandLine": "cd ${current.project.path} && npm start",
         "attributes": {
           "previewUrl": "http://${server.port.3000}/"
         }
