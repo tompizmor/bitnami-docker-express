@@ -52,7 +52,7 @@
       {
         "name": "create sample project",
         "type": "custom",
-        "commandLine": "cd ${current.project.path} && npm install express@4.13.4 && express -f . && cp -rn /bitnami/mongodb/conf ${current.project.path} && npm install mongodb@2.1.18 --save && npm install && counter=0; until nc -z localhost 27017; do counter=$((counter+1)); if [ $counter == 10 ]; then echo \"Error: Couldn't connect to MongoDB.\"; exit 1; fi; echo \"Trying to connect to MongoDB at localhost. Attempt $counter.\"; sleep 5; done; echo \"Connected to MongoDB database\" && echo -e \"\nWelcome to the Bitnami development container for Express.\n\nA sample project has been created just for you, ready to run.\nFor more information, please refer to https://github.com/amrecio/bitnami-docker-express/blob/che-mongodb/README.md.\n\n\n\nYou may close this window when you're done with it.\"",
+        "commandLine": "cd ${current.project.path} && npm install express@4.13.4 && express -f . && cp -rn /bitnami/mongodb/conf ${current.project.path} && npm install mongodb@2.1.18 --save && npm install && counter=0; until nc -z localhost 27017; do counter=$((counter+1)); if [ $counter == 10 ]; then echo \"Error: Couldn't connect to MongoDB.\"; exit 1; fi; echo \"Trying to connect to MongoDB at localhost. Attempt $counter.\"; sleep 5; done; echo \"Connected to MongoDB database\" && echo -e \"\n* Welcome to the Bitnami development container for Express*\n\nA sample project has been created just for you, ready to be run.\nFor more information, please refer to README.md.\"",
         "attributes": {}
       },
       {
