@@ -36,8 +36,13 @@
           }
         },
         "mixins": [
-          "git"
+          "git",
+          "pullrequest"
         ],
+        "attributes": {
+          "local_branch": [ "contrib" ],
+          "contribute_to_branch" : [ "master" ]
+        },
         "modules": [],
         "problems": []
       }
