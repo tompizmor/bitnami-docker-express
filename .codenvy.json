@@ -59,7 +59,7 @@
       {
         "name": "start",
         "type": "custom",
-        "commandLine": "cd ${current.project.path}/sample-project && npm start'",
+        "commandLine": "cd ${current.project.path}/sample-project && npm start",
         "attributes": {
           "previewUrl": "http://${server.port.3000}/"
         }
