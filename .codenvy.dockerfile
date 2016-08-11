@@ -21,9 +21,6 @@ LABEL che:server:3000:ref=nodejs che:server:3000:protocol=http
 # MongoDB
 #
 
-# From docker-compose.yml
-ENV DATABASE_URL=mongodb://localhost:27017/my_project_development
-
 # From bitnami-docker-mongodb/Dockerfile
 ENV BITNAMI_APP_NAME=mongodb \
     BITNAMI_APP_USER=mongo
@@ -44,6 +41,7 @@ RUN harpoon initialize $BITNAMI_APP_NAME \
     ${MONGODB_PRIMARY_USER:+--primaryUser $MONGODB_PRIMARY_USER} \
     ${MONGODB_PRIMARY_PASSWORD:+--primaryPassword $MONGODB_PRIMARY_PASSWORD}
 
+#
 # Eclipse Che
 #
 ENV BITNAMI_APP_NAME=express-che
@@ -51,6 +49,7 @@ ENV BITNAMI_APP_NAME=express-che
 USER bitnami
 WORKDIR /projects
 
+# From docker-compose.yml
 ENV DATABASE_URL=mongodb://localhost:27017/my_project_development
 
 CMD ["sudo", "-i", "harpoon", "start", "--foreground", "mongodb"]
