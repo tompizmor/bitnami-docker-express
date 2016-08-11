@@ -71,12 +71,8 @@
         {
           "id" : "openWelcomePage",
           "properties" : {
-            "authenticatedContentUrl": "http://media.npr.org/images/picture-show-flickr-promo.jpg",
-            "authenticatedIconUrl": "https://bitnami.com/downloads/logos/bitnami-mark.png",
             "authenticatedTitle": "Welcome to the Bitnami Express development container!",
             "authenticatedNotification": "A new sample project is being generated just for you. Keep an eye on the window at the botton of the screen.",
-            "nonAuthenticatedContentUrl": "http://media.npr.org/images/picture-show-flickr-promo.jpg",
-            "nonAuthenticatedIconUrl": "https://bitnami.com/downloads/logos/bitnami-mark.png",
             "nonAuthenticatedTitle": "Welcome to the Bitnami Express development container!",
             "nonAuthenticatedNotification": "A new sample project is being generated just for you. Keep an eye on the window at the botton of the screen."
           }
