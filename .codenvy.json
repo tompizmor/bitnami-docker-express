@@ -42,7 +42,7 @@
         ],
         "attributes": {
           "local_branch": [ "che" ],
-          "contribute_to_branch" : [ "che" ]
+          "contribute_to_branch" : [ "master" ]
         },
         "modules": [],
         "problems": []
