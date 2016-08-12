@@ -41,7 +41,8 @@
           "pullrequest"
         ],
         "attributes": {
-          "local_branch": [ "che" ]
+          "local_branch": [ "che" ],
+          "contribute_to_branch" : [ "che" ]
         },
         "modules": [],
         "problems": []
