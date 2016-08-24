@@ -15,7 +15,7 @@
             },
             "source": {
               "type": "image",
-              "location": "arecio/che-express"
+              "location": "bitnami/express:che-4.13.4-r4"
             },
             "type": "docker",
             "dev": true
