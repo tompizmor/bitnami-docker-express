@@ -28,14 +28,6 @@
         "name": "express-sample",
         "type": "node-js",
         "path": "/express-sample",
-        "source": {
-          "type": "git",
-          "location": "https://github.com/amrecio/bitnami-docker-express",
-          "parameters": {
-            "branch": "che",
-            "keepVcs": "true"
-          }
-        },
         "mixins": [
           "git",
           "pullrequest"
