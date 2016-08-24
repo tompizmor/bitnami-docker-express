@@ -2,7 +2,7 @@ FROM bitnami/express:4.13.4-r4
 
 MAINTAINER Bitnami <containers@bitnami.com>
 
-# Codenvy dependencies
+# Eclipse Che dependencies
 USER root
 
 RUN echo "%sudo ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
@@ -23,7 +23,7 @@ ENV PATH=/opt/bitnami/mongodb/sbin:/opt/bitnami/mongodb/bin:$PATH
 
 RUN harpoon initialize mongodb
 
-# Codenvy
+# Eclipse Che
 USER bitnami
 WORKDIR /projects
 
