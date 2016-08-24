@@ -27,6 +27,7 @@ RUN harpoon initialize mongodb
 USER bitnami
 WORKDIR /projects
 
+ENV TERM=xterm
 ENV DATABASE_URL=mongodb://localhost:27017/my_project_development
 
 ENTRYPOINT ["/entrypoint.sh"]
