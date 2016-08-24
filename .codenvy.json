@@ -73,7 +73,7 @@
         {
           "id": "runCommand",
           "properties": {
-            "name": "create sample project"
+            "name": "create and run sample project"
           }
         }
       ]
