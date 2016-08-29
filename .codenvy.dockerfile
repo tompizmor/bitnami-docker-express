@@ -31,4 +31,4 @@ ENV TERM=xterm
 ENV DATABASE_URL=mongodb://localhost:27017/my_project_development
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["sudo", "-i", "harpoon", "start", "--foreground", "mongodb"]
+CMD ["sudo", "env", "HOME=/root", "harpoon", "start", "--foreground", "mongodb"]
