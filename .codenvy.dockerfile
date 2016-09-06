@@ -11,7 +11,7 @@ RUN bitnami-pkg install java-1.8.0_91-0 --checksum 64cf20b77dc7cce3a28e9fe1daa14
 ENV PATH=/opt/bitnami/java/bin:$PATH
 
 # ExpressJS
-ENV BITNAMI_APP_NAME=express-che
+ENV BITNAMI_APP_NAME=express
 
 RUN rm /app-entrypoint.sh
 
@@ -21,7 +21,7 @@ LABEL che:server:3000:ref=nodejs che:server:3000:protocol=http
 RUN bitnami-pkg unpack mongodb-3.2.7-1 --checksum 98d972ec5f6a34b3fc7a82e76600d9ac6c209537d93402e3b29de9e066440b14
 ENV PATH=/opt/bitnami/mongodb/sbin:/opt/bitnami/mongodb/bin:$PATH
 
-RUN harpoon initialize mongodb
+RUN nami initialize mongodb
 
 # Eclipse Che
 USER bitnami
@@ -31,4 +31,4 @@ ENV TERM=xterm
 ENV DATABASE_URL=mongodb://localhost:27017/my_project_development
 
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["sudo", "env", "HOME=/root", "harpoon", "start", "--foreground", "mongodb"]
+CMD ["sudo", "env", "HOME=/root", "nami", "start", "--foreground", "mongodb"]

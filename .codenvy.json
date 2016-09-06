@@ -11,11 +11,11 @@
           {
             "name": "ws-machine",
             "limits": {
-              "ram": 1000
+              "ram": 1024
             },
             "source": {
               "type": "image",
-              "location": "bitnami/express:che-4.14.0-r1"
+              "location": "bitnami/che-express:che-4.14.0-r1"
             },
             "type": "docker",
             "dev": true
@@ -30,18 +30,16 @@
         "path": "/express-sample",
         "source": {
           "type": "git",
-          "location": "https://github.com/bitnami/bitnami-docker-express",
+          "location": "https://github.com/bitnami/bitnami-docker-che-blank-sample",
           "parameters": {
-            "branch": "che",
-            "keepVcs": "true"
+            "keepVcs": "false"
           }
         },
         "mixins": [
-          "git",
           "pullrequest"
         ],
         "attributes": {
-          "local_branch": [ "che" ],
+          "local_branch": [ "contrib" ],
           "contribute_to_branch" : [ "master" ]
         },
         "modules": [],
@@ -50,7 +48,7 @@
     ],
     "commands": [
       {
-        "name": "run",
+        "name": "2. Run",
         "type": "custom",
         "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path} && npm start",
         "attributes": {
@@ -58,9 +56,9 @@
         }
       },
       {
-        "name": "create project - run first",
+        "name": "1. Create project",
         "type": "custom",
-        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path} && npm install express@4.13.4 && express -f . && cp -rn /bitnami/mongodb/conf ${current.project.path} && npm install mongodb@2.1.18 --save && npm install && counter=0; until nc -z localhost 27017; do counter=$((counter+1)); if [ $counter == 10 ]; then echo \"Error: Couldn't connect to MongoDB.\"; exit 1; fi; echo \"Trying to connect to MongoDB at localhost. Attempt $counter.\"; sleep 5; done; echo \"Connected to MongoDB database\" && npm start",
+        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path} && npm install express@4.13.4 && express -f . && cp -rn /bitnami/mongodb/conf ${current.project.path} && npm install mongodb@2.1.18 --save && npm install && counter=0; until nc -z localhost 27017; do counter=$((counter+1)); if [ $counter == 10 ]; then echo \"Error: Couldn't connect to MongoDB.\"; exit 1; fi; echo \"Trying to connect to MongoDB at localhost. Attempt $counter.\"; sleep 5; done; echo \"Connected to MongoDB database. Starting application server.\" && npm start",
         "attributes": {
           "previewUrl": "http://${server.port.3000}/"
         }
@@ -73,7 +71,7 @@
         {
           "id": "runCommand",
           "properties": {
-            "name": "create project - run first"
+            "name": "1. Create project"
           }
         }
       ]
