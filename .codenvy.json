@@ -62,6 +62,12 @@
         "attributes": {
           "previewUrl": "http://${server.port.3000}/"
         }
+      },
+      {
+        "name": "3. Stop",
+        "type": "custom",
+        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path} && pkill -u bitnami node && echo \"Web server stopped.\"",
+        "attributes": {}
       }
     ]
   },
