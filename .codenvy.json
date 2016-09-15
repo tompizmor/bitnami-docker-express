@@ -1,0 +1,86 @@
+{
+  "v": "4.0",
+  "workspace": {
+    "name": "express",
+    "defaultEnv": "express",
+    "environments": [
+      {
+        "name": "express",
+        "recipe": null,
+        "machineConfigs": [
+          {
+            "name": "ws-machine",
+            "limits": {
+              "ram": 1024
+            },
+            "source": {
+              "type": "image",
+              "location": "bitnami/che-express:che-4.14.0-r1"
+            },
+            "type": "docker",
+            "dev": true
+          }
+        ]
+      }
+    ],
+    "projects": [
+      {
+        "name": "express-sample",
+        "type": "node-js",
+        "path": "/express-sample",
+        "source": {
+          "type": "git",
+          "location": "https://github.com/bitnami/bitnami-docker-che-blank-sample",
+          "parameters": {
+            "keepVcs": "false"
+          }
+        },
+        "mixins": [
+          "pullrequest"
+        ],
+        "attributes": {
+          "local_branch": [ "contrib" ],
+          "contribute_to_branch" : [ "master" ]
+        },
+        "modules": [],
+        "problems": []
+      }
+    ],
+    "commands": [
+      {
+        "name": "2. Run",
+        "type": "custom",
+        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path} && npm start",
+        "attributes": {
+          "previewUrl": "http://${server.port.3000}/"
+        }
+      },
+      {
+        "name": "1. Create project",
+        "type": "custom",
+        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path} && npm install express@4.13.4 && express -f . && cp -rn /bitnami/mongodb/conf ${current.project.path} && npm install mongodb@2.1.18 --save && npm install && counter=0; until nc -z localhost 27017; do counter=$((counter+1)); if [ $counter == 10 ]; then echo \"Error: Couldn't connect to MongoDB.\"; exit 1; fi; echo \"Trying to connect to MongoDB at localhost. Attempt $counter.\"; sleep 5; done; echo \"Connected to MongoDB database. Starting application server.\" && npm start",
+        "attributes": {
+          "previewUrl": "http://${server.port.3000}/"
+        }
+      },
+      {
+        "name": "3. Stop",
+        "type": "custom",
+        "commandLine": "source /opt/bitnami/stacksmith-utils.sh && print_welcome_page && cd ${current.project.path} && pkill -u bitnami node && echo \"Web server stopped.\"",
+        "attributes": {}
+      }
+    ]
+  },
+  "ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "id": "runCommand",
+          "properties": {
+            "name": "1. Create project"
+          }
+        }
+      ]
+    }
+  }
+}
