@@ -48,10 +48,11 @@ log () {
 
 if [ "$1" == npm -a "$2" == "start" ]; then
     log "Initialiazing Express module"
-    sudo HOME=/root nami --log-level trace8 initialize express
+    nami initialize express
+    
     if ! dependencies_up_to_date; then
         log "Installing/Updating Express dependencies (npm)"
-        sudo npm install
+        npm install
         log "Dependencies updated"
     fi
     
