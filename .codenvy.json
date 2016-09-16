@@ -15,7 +15,7 @@
             },
             "source": {
               "type": "image",
-              "location": "bitnami/che-express:che-4.14.0-r1"
+              "location": "tompizmor/che-express-test:latest"
             },
             "type": "docker",
             "dev": true
