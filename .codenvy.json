@@ -48,16 +48,5 @@
     ],
     "commands": []
   },
-  "ide": {
-    "onProjectsLoaded": {
-      "actions": [
-        {
-          "id": "runCommand",
-          "properties": {
-            "name": "1. Create project"
-          }
-        }
-      ]
-    }
-  }
+  "ide": {}
 }
