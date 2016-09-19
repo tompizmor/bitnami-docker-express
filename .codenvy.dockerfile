@@ -45,4 +45,4 @@ ENV DATABASE_URL=mongodb://localhost:27017/my_project_development
 COPY rootfs /
 
 ENTRYPOINT ["/app-entrypoint.sh"]
-CMD ["tail", "-f", "/dev/null"]
+CMD ["npm", "start"]
