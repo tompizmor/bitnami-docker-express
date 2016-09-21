@@ -1,8 +1,6 @@
 {
   "v": "4.0",
   "workspace": {
-    "name": "express",
-    "description" : "Express development workspace",
     "environments": {
       "express-env": {
         "recipe": {
@@ -24,7 +22,7 @@
         }
       }
     },
-    "defaultEnv": "wss",
+    "defaultEnv": "express-env",
     "projects": [{
       "name": "express-sample",
       "type": "node-js",
