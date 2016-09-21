@@ -1,7 +1,7 @@
 {
   "v": "4.0",
   "workspace": {
-    "name": "express-wss"
+    "name": "express-wss",
     "environments": {
       "express-env": {
         "recipe": {
