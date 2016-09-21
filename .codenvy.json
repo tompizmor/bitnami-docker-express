@@ -1,19 +1,21 @@
 {
-  "v": "5.0",
-  "workspaceConfig": {
+  "v": "4.0",
+  "workspace": {
     "name": "express",
     "description" : "Express development workspace",
-    "defaultEnv": "express-env",
     "environments": {
       "express-env": {
         "recipe": {
-          "type": "image",
-          "contentType": "docker",
+          "type": "dockerimage",
           "location": "tompizmor/codenvy-express-4:latest"
         },
         "machines": {
           "ws-machine": {
-            "agents": ["ws-agent"],
+            "agents": [
+              "org.eclipse.che.terminal",
+              "org.eclipse.che.ws-agent",
+              "org.eclipse.che.ssh" 
+            ],
             "servers": {},
             "attributes": {
               "memoryLimitsBytes": "2147483648"
@@ -22,6 +24,7 @@
         }
       }
     },
+    "defaultEnv": "wss",
     "projects": [{
       "name": "express-sample",
       "type": "node-js",
