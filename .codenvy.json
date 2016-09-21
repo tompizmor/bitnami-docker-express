@@ -6,7 +6,7 @@
       "express-env": {
         "recipe": {
           "type": "dockerimage",
-          "location": "tompizmor/codenvy-express-factory-2:latest"
+          "location": "tompizmor/codenvy-express-factory-3:latest"
         },
         "machines": {
           "ws-machine": {
@@ -60,7 +60,7 @@
     }, {
       "name": "3.Initialize",
       "type": "custom",
-      "commandLine": "sudo HOME=/root nami initialize express --projectsDirectory=/projects --projectName=$(basename ${current.project.path}) --createProject=false",
+      "commandLine": "sudo HOME=/root nami initialize express --projectsDirectory=/projects --projectName=$(basename ${current.project.path}) --createProject=false ; sudo HOME=/root nami execute express generateProject --projectDir=/projects $(basename ${current.project.path})",
       "attributes": {}
     }, {
       "name": "4.Call app-entrypoint",
@@ -74,7 +74,7 @@
       "actions": [{
         "id": "runCommand",
         "properties": {
-          "name": "3.Initialize"
+          "name": "1.CreateProject"
         }
       }]
     }
