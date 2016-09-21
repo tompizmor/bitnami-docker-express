@@ -6,7 +6,7 @@
       "express-env": {
         "recipe": {
           "type": "dockerimage",
-          "location": "tompizmor/codenvy-express-factory:latest"
+          "location": "tompizmor/codenvy-express-factory-2:latest"
         },
         "machines": {
           "ws-machine": {
