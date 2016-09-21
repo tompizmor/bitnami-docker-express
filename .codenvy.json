@@ -48,7 +48,7 @@
     "commands": [{
       "name": "1.Create project",
       "type": "custom",
-      "commandLine": "sudo HOME=/root nami execute express generateProject myProject",
+      "commandLine": "sudo HOME=/root nami execute express generateProject $(basename ${current.project.path})",
       "attributes": {}
     }, {
       "name": "2.Run",
@@ -60,7 +60,7 @@
     }, {
       "name": "3.Initialize",
       "type": "custom",
-      "commandLine": "sudo HOME=/root nami initialize express --projectsDirectory=/projects --projectName=myApp --createProject=false",
+      "commandLine": "sudo HOME=/root nami initialize express --projectsDirectory=/projects --projectName=$(basename ${current.project.path}) --createProject=false",
       "attributes": {}
     }, {
       "name": "4.Call app-entrypoint",
