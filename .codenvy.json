@@ -15,7 +15,7 @@
             },
             "source": {
               "type": "image",
-              "location": "tompizmor/che-express-test:latest"
+              "location": "bitnami/che-express:che-4.14.0-r1"
             },
             "type": "docker",
             "dev": true
@@ -46,7 +46,45 @@
         "problems": []
       }
     ],
-    "commands": []
+    "commands": [
+      {
+        "name": "1.Create project",
+        "type": "custom",
+        "commandLine": "sudo HOME=/root nami execute express generateProject myProject",
+        "attributes": {}
+      },
+      {
+        "name": "2.Run",
+        "type": "custom",
+        "commandLine": "cd ${current.project.path} && npm start",
+        "attributes": {
+          "previewUrl": "http://${server.port.3000}/"
+        }
+      },
+      {
+        "name": "3.Initialize",
+        "type": "custom",
+        "commandLine": "sudo HOME=/root nami initialize express",
+        "attributes": {}
+      },
+      {
+        "name": "4.Call app-entrypoint",
+        "type": "custom",
+        "commandLine": "cd / && ./app-entrypoint.sh",
+        "attributes": {}
+      }
+    ]
   },
-  "ide": {}
+  "ide": {
+    "onProjectsLoaded": {
+      "actions": [
+        {
+          "id": "runCommand",
+          "properties": {
+            "name": "1. Create project"
+          }
+        }
+      ]
+    }
+  }
 }
