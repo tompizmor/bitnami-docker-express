@@ -2,6 +2,7 @@
   "v": "4.0",
   "workspace": {
     "name": "express",
+    "description": "Default express environment",
     "defaultEnv": "express",
     "environments": [
       {
