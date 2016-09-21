@@ -1,8 +1,9 @@
 {
   "v": "5.0",
-  "workspace": {
+  "workspaceConfig": {
     "name": "express",
-    "defaultEnv": "express",
+    "description" : "Express development workspace",
+    "defaultEnv": "express-env",
     "environments": {
       "express-env": {
         "recipe": {
