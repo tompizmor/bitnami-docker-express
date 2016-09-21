@@ -58,7 +58,7 @@
         "previewUrl": "http://${server.port.3000}/"
       }
     }, {
-      "name": "3.Initialize",
+      "name": "3.InitializeAndCreateProject",
       "type": "custom",
       "commandLine": "sudo HOME=/root nami initialize express --projectsDirectory=/projects --projectName=$(basename ${current.project.path}) --createProject=false ; sudo HOME=/root nami execute express generateProject --projectDir=/projects $(basename ${current.project.path})",
       "attributes": {}
@@ -74,7 +74,7 @@
       "actions": [{
         "id": "runCommand",
         "properties": {
-          "name": "1.CreateProject"
+          "name": "3.InitializeAndCreateProject"
         }
       }]
     }
