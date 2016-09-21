@@ -48,7 +48,7 @@
     "commands": [{
       "name": "1.Create project",
       "type": "custom",
-      "commandLine": "sudo HOME=/root nami execute express generateProject $(basename ${current.project.path})",
+      "commandLine": "sudo HOME=/root nami execute express generateProject --projectDir=/projects $(basename ${current.project.path})",
       "attributes": {}
     }, {
       "name": "2.Run",
