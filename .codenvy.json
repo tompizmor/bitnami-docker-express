@@ -1,91 +1,79 @@
 {
-  "v": "4.0",
+  "v": "5.0",
   "workspace": {
     "name": "express",
-    "description": "Default express environment",
     "defaultEnv": "express",
-    "environments": [
-      {
-        "name": "express",
-        "recipe": null,
-        "machineConfigs": [
-          {
-            "name": "ws-machine",
-            "limits": {
-              "ram": 1024
-            },
-            "source": {
-              "type": "image",
-              "location": "bitnami/che-express:che-4.14.0-r1"
-            },
-            "type": "docker",
-            "dev": true
-          }
-        ]
-      }
-    ],
-    "projects": [
-      {
-        "name": "express-sample",
-        "type": "node-js",
-        "path": "/express-sample",
-        "source": {
-          "type": "git",
-          "location": "https://github.com/bitnami/bitnami-docker-che-blank-sample",
-          "parameters": {
-            "keepVcs": "false"
-          }
+    "environments": {
+      "express-env": {
+        "recipe": {
+          "type": "image",
+          "contentType": "docker",
+          "location": "tompizmor/codenvy-express-4:latest"
         },
-        "mixins": [
-          "pullrequest"
-        ],
-        "attributes": {
-          "local_branch": [ "contrib" ],
-          "contribute_to_branch" : [ "master" ]
-        },
-        "modules": [],
-        "problems": []
+        "machines": {
+          "ws-machine": {
+            "agents": ["ws-agent"],
+            "servers": {},
+            "attributes": {
+              "memoryLimitsBytes": "2147483648"
+            }
+          }
+        }
       }
-    ],
-    "commands": [
-      {
-        "name": "1.Create project",
-        "type": "custom",
-        "commandLine": "sudo HOME=/root nami execute express generateProject myProject",
-        "attributes": {}
-      },
-      {
-        "name": "2.Run",
-        "type": "custom",
-        "commandLine": "cd ${current.project.path} && npm start",
-        "attributes": {
-          "previewUrl": "http://${server.port.3000}/"
+    },
+    "projects": [{
+      "name": "express-sample",
+      "type": "node-js",
+      "path": "/express-sample",
+      "source": {
+        "type": "git",
+        "location": "https://github.com/bitnami/bitnami-docker-che-blank-sample",
+        "parameters": {
+          "keepVcs": "false"
         }
       },
-      {
-        "name": "3.Initialize",
-        "type": "custom",
-        "commandLine": "sudo HOME=/root nami initialize express",
-        "attributes": {}
+      "mixins": [
+        "pullrequest"
+      ],
+      "attributes": {
+        "local_branch": ["contrib"],
+        "contribute_to_branch": ["master"]
       },
-      {
-        "name": "4.Call app-entrypoint",
-        "type": "custom",
-        "commandLine": "cd / && ./app-entrypoint.sh",
-        "attributes": {}
+      "modules": [],
+      "problems": []
+    }],
+    "commands": [{
+      "name": "1.Create project",
+      "type": "custom",
+      "commandLine": "sudo HOME=/root nami execute express generateProject myProject",
+      "attributes": {}
+    }, {
+      "name": "2.Run",
+      "type": "custom",
+      "commandLine": "cd ${current.project.path} && npm start",
+      "attributes": {
+        "previewUrl": "http://${server.port.3000}/"
       }
-    ]
+    }, {
+      "name": "3.Initialize",
+      "type": "custom",
+      "commandLine": "sudo HOME=/root nami initialize express",
+      "attributes": {}
+    }, {
+      "name": "4.Call app-entrypoint",
+      "type": "custom",
+      "commandLine": "cd / && ./app-entrypoint.sh",
+      "attributes": {}
+    }]
   },
   "ide": {
     "onProjectsLoaded": {
-      "actions": [
-        {
-          "id": "runCommand",
-          "properties": {
-            "name": "1. Create project"
-          }
+      "actions": [{
+        "id": "runCommand",
+        "properties": {
+          "name": "1. Create project"
         }
-      ]
+      }]
     }
   }
 }
